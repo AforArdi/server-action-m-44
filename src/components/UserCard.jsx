@@ -1,16 +1,14 @@
-import {CircleDollar} from "@gravity-ui/icons";
-import {Card, Link} from "@heroui/react";
+import { Card, Link, Button } from "@heroui/react";
 
 const UserCard = ({ user }) => {
-    const {name, email, username} = user;
+    const { name, email, username } = user;
     return (
-        <Card className="w-100">
-            <CircleDollar aria-label="Dollar sign icon" className="text-primary size-6" role="img" />
+        <Card variant="primary" className="border p-4 rounded-lg">
             <Card.Header>
-                <Card.Title>{name}</Card.Title>
+                <Card.Title>Become an Acme Creator!</Card.Title>
                 <Card.Description>
-                    <p>{username}</p>
-                    <p>{email}</p>
+                    Visit the Acme Creator Hub to sign up today and start earning credits from your fans and
+                    followers.
                 </Card.Description>
             </Card.Header>
             <Card.Footer>
@@ -20,8 +18,7 @@ const UserCard = ({ user }) => {
                     rel="noopener noreferrer"
                     target="_blank"
                 >
-                    User Details
-                    <Link.Icon aria-hidden="true" />
+                    <Button color="primary" variant="solid">Show Details</Button>
                 </Link>
             </Card.Footer>
         </Card>
