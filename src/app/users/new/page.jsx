@@ -1,13 +1,24 @@
+'use client'
+
 import { NewAddUserAction } from "@/lib/actions";
-import { Button, Input, Label, TextField } from "@heroui/react";
+import { Button, FieldError, Form, Input, Label, TextField } from "@heroui/react";
 
 const AddNewUserPage = () => {
     return (
         <div className="w-1/2 mx-auto">
-            <form action={NewAddUserAction} className="flex flex-col gap-4">
-                <TextField className="w-full" name="name" type="text">
+            <Form action={NewAddUserAction} className="flex flex-col gap-4">
+                <TextField
+                isRequired
+                minLength={8}
+                validate={(value) => {
+                    if (value.length < 8) {
+                    return "Name must be at least 8 characters";
+                    }
+                }}
+                className="w-full" name="name" type="text">
                     <Label>Name</Label>
                     <Input placeholder="Enter your name" />
+                    <FieldError></FieldError>
                 </TextField>
                 <TextField className="w-full" name="email" type="email">
                     <Label>Email</Label>
@@ -21,7 +32,7 @@ const AddNewUserPage = () => {
                     Cancel
                 </Button>
                 <Button type="submit">Add</Button>
-            </form>
+            </Form>
         </div>
     );
 }
