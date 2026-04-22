@@ -1,7 +1,17 @@
 'use server'
+
+import { revalidatePath } from "next/cache";
+import { addUser } from "./users";
+
 const AddUserAction = async (formData) => {
-    const name = formData.get('name');
-    console.log(name);
+    const newUserToAdd = Object.fromEntries(formData.entries());
+    const res = await addUser(newUserToAdd);
+
+    if(res.ok){
+        revalidatePath('/users');
+    }
+
+    return res;
 }
  
 export default AddUserAction;

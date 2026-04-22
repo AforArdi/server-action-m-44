@@ -5,10 +5,9 @@ const UserCard = ({ user }) => {
     return (
         <Card variant="primary" className="border p-4 rounded-lg">
             <Card.Header>
-                <Card.Title>Become an Acme Creator!</Card.Title>
+                <Card.Title>{user.name}</Card.Title>
                 <Card.Description>
-                    Visit the Acme Creator Hub to sign up today and start earning credits from your fans and
-                    followers.
+                    {user.email}
                 </Card.Description>
             </Card.Header>
             <Card.Footer>

@@ -1,7 +1,7 @@
 import AddUser from "@/components/AddUser";
 import UserCard from "@/components/UserCard";
 import AddUserAction from "@/lib/actions";
-import getUsers from "@/lib/users";
+import { getUsers } from "@/lib/users";
 
 const UsersPage = async () => {
     const users = await getUsers();
