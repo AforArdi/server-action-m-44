@@ -2,6 +2,8 @@ import AddUser from "@/components/AddUser";
 import UserCard from "@/components/UserCard";
 import AddUserAction from "@/lib/actions";
 import { getUsers } from "@/lib/users";
+import { Button } from "@heroui/react";
+import Link from "next/link";
 
 const UsersPage = async () => {
     const users = await getUsers();
@@ -10,6 +12,9 @@ const UsersPage = async () => {
         <div className="container mx-auto">
             <h2 className="font-4xl">Users</h2>
             <AddUser AddUserAction={AddUserAction}></AddUser>
+            <Link href={'/users/new'}>
+                <Button>Add New User Page</Button>
+            </Link>
             <div className="grid grid-cols-3 gap-4 mt-8">
                 {
                     users.map(user=> <UserCard
