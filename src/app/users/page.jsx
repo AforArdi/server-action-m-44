@@ -10,11 +10,13 @@ const UsersPage = async () => {
     // console.log(users.length, 'total users');
     return ( 
         <div className="container mx-auto">
-            <h2 className="font-4xl">Users</h2>
-            <AddUser AddUserAction={AddUserAction}></AddUser>
-            <Link href={'/users/new'}>
-                <Button>Add New User Page</Button>
-            </Link>
+            <h2 className="text-4xl font-bold my-4">Users</h2>
+            <div className="flex items-center gap-3">
+                <AddUser AddUserAction={AddUserAction}></AddUser>
+                <Link href={'/users/new'}>
+                    <Button>Add New User Page</Button>
+                </Link>
+                </div>
             <div className="grid grid-cols-3 gap-4 mt-8">
                 {
                     users.map(user=> <UserCard
