@@ -6,6 +6,7 @@ import { Button, FieldError, Form, Input, Label, TextField } from "@heroui/react
 const AddNewUserPage = () => {
     return (
         <div className="w-1/2 mx-auto">
+            <h2 className="font-bold text-4xl my-4">Add a new user page</h2>
             <Form action={NewAddUserAction} className="flex flex-col gap-4">
                 <TextField
                 isRequired
@@ -28,10 +29,12 @@ const AddNewUserPage = () => {
                     <Label>Username</Label>
                     <Input placeholder="Enter username" />
                 </TextField>
-                <Button variant="secondary">
-                    Cancel
-                </Button>
-                <Button type="submit">Add</Button>
+                <div className="flex items-center gap-3">
+                    <Button variant="secondary">
+                        Cancel
+                    </Button>
+                    <Button type="submit">Add</Button>
+                </div>
             </Form>
         </div>
     );

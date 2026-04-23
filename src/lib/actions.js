@@ -11,7 +11,6 @@ const AddUserAction = async (formData) => {
     if(res.ok){
         revalidatePath('/users');
     }
-
     return res;
 }
 
